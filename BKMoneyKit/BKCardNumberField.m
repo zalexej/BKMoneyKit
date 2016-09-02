@@ -30,7 +30,6 @@
     _numberCharacterSet = [BKMoneyUtils numberCharacterSet];
     
     self.keyboardType = UIKeyboardTypeNumberPad;
-    self.clearButtonMode = UITextFieldViewModeAlways;
     
     [self addTarget:self action:@selector(textFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
 }
