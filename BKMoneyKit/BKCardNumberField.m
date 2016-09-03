@@ -156,4 +156,10 @@
     return self.cardNumberFormatter.cardPatternInfo.companyName;
 }
 
+- (void)setText:(NSString *)text
+{
+	[super setText:[self.cardNumberFormatter formattedStringFromRawString:text]];
+	[self updateCardLogoImage];
+}
+
 @end

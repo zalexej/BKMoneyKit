@@ -39,7 +39,6 @@
 - (void)commonInit
 {
     _cardNumberFormatter = [[BKCardNumberFormatter alloc] init];
-    self.showsCardLogo = YES;
 }
 
 #pragma mark - UIView

@@ -27,8 +27,10 @@
 {
     [super viewDidLoad];
 
-    self.cardNumberField.showsCardLogo = YES;
-    
+//    self.cardNumberField.showsCardLogo = YES;
+	self.cardNumberField.cardNumber = @"5234222233334444";
+	self.cardNumberLabel.text = @"5234222233334444";
+	
 //    self.currencyTextField.numberFormatter.currencySymbol = @"";
 //    self.currencyTextField.numberFormatter.currencyCode = @"KRW";
     
@@ -36,10 +38,10 @@
     [self.cardExpiryField addTarget:self action:@selector(textFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.currencyTextField addTarget:self action:@selector(textFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
     
-    [self.cardNumberField becomeFirstResponder];
-    
-    self.cardNumberLabel.cardNumberFormatter.maskingCharacter = @"●";       // BLACK CIRCLE        25CF
-    self.cardNumberLabel.cardNumberFormatter.maskingGroupIndexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 3)];
+//    [self.cardNumberField becomeFirstResponder];
+	
+//    self.cardNumberLabel.cardNumberFormatter.maskingCharacter = @"●";       // BLACK CIRCLE        25CF
+//    self.cardNumberLabel.cardNumberFormatter.maskingGroupIndexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 3)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +59,7 @@
             cardCompany = @"unknown";
         }
         
-        self.cardNumberLabel.cardNumber = self.cardNumberField.cardNumber;
+        self.cardNumberLabel.text = self.cardNumberField.cardNumber;
         
         self.cardNumberInfoLabel.text = [NSString stringWithFormat:@"company=%@\nnumber=%@", cardCompany, self.cardNumberField.cardNumber];
         
